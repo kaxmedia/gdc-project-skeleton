@@ -1,5 +1,5 @@
 <template>
-    <div v-if="!isAuthenticated" class="fixed inset-0 flex items-center justify-center" :style="{ backgroundColor: 'hsl(210, 40%, 98%)' }">
+    <div v-if="!isAuthenticated" class="fixed inset-0 flex items-center justify-center" style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;">
         <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div class="max-w-md w-full mx-auto p-6 bg-white/80 backdrop-blur-lg rounded-lg shadow-lg border border-gray-200 relative z-10">
             <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Authentication Required</h2>
@@ -10,7 +10,7 @@
                         id="username"
                         type="text" 
                         v-model="username" 
-                        class="w-full px-3 py-2 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
+                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
                         required
                     >
                 </div>
@@ -20,7 +20,7 @@
                         id="password"
                         type="password" 
                         v-model="password" 
-                        class="w-full px-3 py-2 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
+                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
                         required
                     >
                 </div>
@@ -41,211 +41,472 @@
                 <div class="flex justify-between items-center h-16">
                     <div class="flex items-center">
                         <div class="flex-shrink-0 flex items-center">
-                            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse mr-2"></div>
-                            <span class="text-gray-900 text-xl font-bold">Gambling.com Group AI ReviewBuilder</span>
+                            <span class="rounded-full bg-[#9B87F5]">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.8333 1.66675L3.41163 10.0784C3.3094 10.1999 3.24399 10.348 3.22308 10.5053C3.20217 10.6627 3.22664 10.8227 3.29361 10.9667C3.36059 11.1106 3.46727 11.2324 3.60111 11.3177C3.73496 11.4031 3.89039 11.4484 4.04913 11.4484H8.3333L7.49997 18.1151L14.9216 9.70341C15.0239 9.58197 15.0893 9.43386 15.1102 9.27651C15.1311 9.11915 15.1066 8.95909 15.0397 8.81517C14.9727 8.67125 14.866 8.54945 14.7322 8.46411C14.5983 8.37876 14.4429 8.33342 14.2841 8.33341H11.6666L12.5 1.66675H10.8333Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            </span>
+                            <span class="text-gray-900 text-xl font-bold ml-2">Gambling.com Group AI ReviewBuilder</span>
                         </div>
                     </div>
                     <div>
-                        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-sm">Documentation</a>
+                        <a 
+                            href="https://gdcgroup.atlassian.net/wiki/spaces/GDCC/pages/5541822623/API+for+UGC+ratings+using+AI" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="text-gray-600 hover:text-gray-900 font-medium text-sm">Documentation</a>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <div class="min-h-screen flex items-start justify-center relative pt-8" :style="{ backgroundColor: 'hsl(210, 40%, 98%)' }">
+        <div class="min-h-screen flex items-start justify-center relative pt-8" style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;">
             <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 relative z-10">
-                <!-- Title and Subtitle -->
-                <div class="mb-8">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-2">AI Rating Generator</h1>
-                    <p class="text-lg text-gray-600">Create realistic user reviews using AI services</p>
-                </div>
+               
 
-                <!-- AI Service Configuration Card -->
-                <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg mb-8">
-                    <div class="p-6">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-6">AI Service Configuration</h2>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-800 mb-2">AI Service</label>
-                                <select 
-                                    v-model="formParams.model"
-                                    class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 pr-8 focus:border-blue-500 focus:ring-blue-500 appearance-none placeholder-gray-500"
-                                >
-                                    <option v-for="option in modelOptions" :key="option.value" :value="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-800 mb-2">Language</label>
-                                <select 
-                                    v-model="selectedLanguage"
-                                    class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 pr-8 focus:border-blue-500 focus:ring-blue-500 appearance-none placeholder-gray-500"
-                                >
-                                    <option v-for="lang in languageOptions" :key="lang.value" :value="lang.value">
-                                        {{ lang.label }}
-                                    </option>
-                                </select>
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-12 gap-8">
+                    <!-- Left Column - Configuration Cards -->
+                    
+                    <div class="col-span-7 space-y-8">
+                        <div class="">
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">AI Rating Generator</h1>
+                        <p class="text-lg text-gray-600">Create realistic user reviews using AI services</p>
+                       </div>
+                        <!-- AI Service Configuration Card -->
+                        <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg">
+                            <div class="p-6">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-6">AI Service Configuration</h2>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-800 mb-2">AI Service</label>
+                                        <select 
+                                            v-model="formParams.model"
+                                            class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                            style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                        >
+                                            <option v-for="option in modelOptions" :key="option.value" :value="option.value">
+                                                {{ option.label }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-800 mb-2">Language</label>
+                                        <select 
+                                            v-model="selectedLanguage"
+                                            class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                            style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                        >
+                                            <option v-for="lang in languageOptions" :key="lang.value" :value="lang.value">
+                                                {{ lang.label }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Brand Configuration Card -->
-                <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg mb-8">
-                    <div class="p-6 pb-8">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-6">Brand Configuration</h2>
-                        <div class="space-y-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-800 mb-2">Product Type</label>
-                                    <select 
-                                        v-model="params.product"
-                                        class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 pr-8 focus:border-blue-500 focus:ring-blue-500 appearance-none placeholder-gray-500"
-                                    >
-                                        <option value="" disabled>Select product type</option>
-                                        <option value="casino">Casino</option>
-                                        <option value="betting">Betting</option>
-                                    </select>
-                                    <p v-if="validationErrors.product" class="mt-1 text-sm text-red-600">{{ validationErrors.product }}</p>
+                        <!-- Brand Configuration Card -->
+                        <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg">
+                            <div class="p-6 pb-8">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-6">Brand Configuration</h2>
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-800 mb-2">Product Type</label>
+                                            <select 
+                                                v-model="params.product"
+                                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                                style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                            >
+                                                <option value="" disabled>Select product type</option>
+                                                <option value="casino">Casino</option>
+                                                <option value="betting">Betting</option>
+                                            </select>
+                                            <p v-if="validationErrors.product" class="mt-1 text-sm text-red-600">{{ validationErrors.product }}</p>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-800 mb-2">Brand Name</label>
+                                            <input 
+                                                type="text" 
+                                                v-model="params.brand_name"
+                                                placeholder="Enter brand name"
+                                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                                style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                            >
+                                            <p v-if="validationErrors.brand_name" class="mt-1 text-sm text-red-600">{{ validationErrors.brand_name }}</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-800 mb-2">Brand Review URL</label>
+                                        <input 
+                                            type="text" 
+                                            v-model="params.url"
+                                            placeholder="Enter brand review URL"
+                                            class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                            style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                        >
+                                        <p v-if="validationErrors.url" class="mt-1 text-sm text-red-600">{{ validationErrors.url }}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-800 mb-2">Brand Name</label>
-                                    <input 
-                                        type="text" 
-                                        v-model="params.brand_name"
-                                        class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 focus:border-blue-500 focus:ring-blue-500 placeholder-gray-500"
-                                        placeholder="Enter brand name"
-                                    >
-                                    <p v-if="validationErrors.brand_name" class="mt-1 text-sm text-red-600">{{ validationErrors.brand_name }}</p>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-800 mb-2">Brand Review URL</label>
-                                <input 
-                                    type="text" 
-                                    v-model="params.url"
-                                    class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 focus:border-blue-500 focus:ring-blue-500 placeholder-gray-500"
-                                    placeholder="@https://www.gambling.com/uk/online-casinos/pub-casino"
-                                >
-                                <p v-if="validationErrors.url" class="mt-1 text-sm text-red-600">{{ validationErrors.url }}</p>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Review Settings Card -->
-                <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg mb-8">
-                    <div class="p-6 pb-8">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-6">Review Settings</h2>
-                        <div class="space-y-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-800 mb-2">Comment Length (chars)</label>
-                                    <input 
-                                        type="number" 
-                                        v-model="params.character_max"
-                                        max="200"
-                                        class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 focus:border-blue-500 focus:ring-blue-500 placeholder-gray-500"
-                                        placeholder="Enter max characters"
-                                    >
-                                    <p v-if="validationErrors.character_max" class="mt-1 text-sm text-red-600">{{ validationErrors.character_max }}</p>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-800 mb-2">Sentences in Comment</label>
-                                    <input 
-                                        type="number" 
-                                        v-model="params.statements"
-                                        class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 focus:border-blue-500 focus:ring-blue-500 placeholder-gray-500"
-                                        placeholder="Enter number of sentences"
-                                    >
-                                    <p v-if="validationErrors.statements" class="mt-1 text-sm text-red-600">{{ validationErrors.statements }}</p>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-800 mb-2">Misspellings Count</label>
-                                    <input 
-                                        type="number" 
-                                        v-model="params.misspellings"
-                                        class="block w-full rounded-2xl border-gray-300 bg-gray-100 text-base px-3 py-2 focus:border-blue-500 focus:ring-blue-500 placeholder-gray-500"
-                                        placeholder="Enter misspellings count"
-                                    >
-                                    <p v-if="validationErrors.misspellings" class="mt-1 text-sm text-red-600">{{ validationErrors.misspellings }}</p>
-                                </div>
-                            </div>
-                            <div class="mt-6 pb-4">
-                                <div class="flex items-center justify-between mb-2">
-                                    <label class="block text-sm font-medium text-gray-800">Rating Score</label>
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                        {{ params.score }}/10
-                                    </span>
-                                </div>
-                                <div 
-                                    class="relative w-full h-4 bg-blue-100 rounded-full cursor-pointer group"
-                                    @mousemove="handleMouseMove"
-                                    @click="handleClick"
-                                    ref="progressBar"
-                                >
-                                    <div 
-                                        class="absolute top-0 left-0 h-full rounded-full transition-all duration-200"
-                                        :style="{ width: `${(params.score * 10)}%`, backgroundColor: 'hsl(239, 84%, 67%)' }"
-                                    >
+                        <!-- Review Settings Card -->
+                        <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg">
+                            <div class="p-6 pb-8">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-6">Review Settings</h2>
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-800 mb-2">Comment Length (chars)</label>
+                                            <input 
+                                                type="number" 
+                                                v-model="params.character_max"
+                                                placeholder="Enter max characters"
+                                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                                style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                            >
+                                            <p v-if="validationErrors.character_max" class="mt-1 text-sm text-red-600">{{ validationErrors.character_max }}</p>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-800 mb-2">Sentences in Comment</label>
+                                            <input 
+                                                type="number" 
+                                                v-model="params.statements"
+                                                placeholder="Enter number of sentences"
+                                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                                style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                            >
+                                            <p v-if="validationErrors.statements" class="mt-1 text-sm text-red-600">{{ validationErrors.statements }}</p>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-800 mb-2">Misspellings Count</label>
+                                            <input 
+                                                type="number" 
+                                                v-model="params.misspellings"
+                                                placeholder="Enter number of misspellings"
+                                                class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                                                style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;"
+                                            >
+                                            <p v-if="validationErrors.misspellings" class="mt-1 text-sm text-red-600">{{ validationErrors.misspellings }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-6 pb-4">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <label class="block text-sm font-medium text-gray-800">Rating Score</label>
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                {{ params.score }}/10
+                                            </span>
+                                        </div>
                                         <div 
-                                            class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full border-2 transition-transform duration-200 transform group-hover:scale-110 group-hover:shadow-lg"
-                                            :style="{ borderColor: 'hsl(239, 84%, 67%)' }"
-                                        ></div>
+                                            class="relative w-full h-4 bg-blue-100 rounded-full cursor-pointer group"
+                                            @mousemove="handleMouseMove"
+                                            @click="handleClick"
+                                            ref="progressBar"
+                                        >
+                                            <div 
+                                                class="absolute top-0 left-0 h-full rounded-full transition-all duration-200"
+                                                :style="{ width: `${(params.score * 10)}%`, backgroundColor: 'hsl(239, 84%, 67%)' }"
+                                            >
+                                                <div 
+                                                    class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full border-2 transition-transform duration-200 transform group-hover:scale-110 group-hover:shadow-lg"
+                                                    :style="{ borderColor: 'hsl(239, 84%, 67%)' }"
+                                                ></div>
+                                            </div>
+                                            <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none opacity-0">
+                                                <template v-for="n in 10" :key="n">
+                                                    <div class="h-4 w-0.5 bg-gray-400"></div>
+                                                </template>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="absolute inset-0 flex items-center justify-between px-2 pointer-events-none opacity-0">
-                                        <template v-for="n in 10" :key="n">
-                                            <div class="h-4 w-0.5 bg-gray-400"></div>
-                                        </template>
-                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Generate Rating Button -->
+                        <div class="flex justify-center">
+                            <button 
+                                @click="generateReview"
+                                :disabled="isLoading"
+                                class="inline-flex items-center px-6 py-3 text-base font-medium rounded-xl text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                :style="{ backgroundColor: 'hsl(239, 84%, 67%)' }"
+                            >
+                                <template v-if="isLoading">
+                                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Generating...
+                                </template>
+                                <template v-else>
+                                    Generate Rating
+                                </template>
+                            </button>
+                        </div>
+
+                        <!-- Fading Horizontal Line -->
+                        <div class="flex items-center justify-center">
+                            <div class="w-full max-w-4xl mx-auto flex items-center">
+                                <div class="flex-grow h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Reviewer Persona Content -->
+                    <div class="col-span-5 overflow-hidden shadow-lg sm:rounded-lg border-2 border-gray-200 h-fit" style="background: linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), linear-gradient(0deg, #F8FAFC 0%, #F8FAFC 100%), #FFF;">
+                        <div class="p-6">
+                            <div class="flex items-center mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M15.8333 17.5V15.8333C15.8333 14.9493 15.4821 14.1014 14.857 13.4763C14.2319 12.8512 13.384 12.5 12.5 12.5H7.49999C6.61593 12.5 5.76809 12.8512 5.14297 13.4763C4.51785 14.1014 4.16666 14.9493 4.16666 15.8333V17.5" stroke="#0F1729" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9.99999 9.16667C11.8409 9.16667 13.3333 7.67428 13.3333 5.83333C13.3333 3.99238 11.8409 2.5 9.99999 2.5C8.15904 2.5 6.66666 3.99238 6.66666 5.83333C6.66666 7.67428 8.15904 9.16667 9.99999 9.16667Z" stroke="#0F1729" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <h2 class="text-xl font-semibold text-gray-900">Build Reviewer Persona</h2>
+                            </div>
+                            <p class="text-gray-600 mb-6">Customize the traits of your AI-generated reviewer</p>
+
+                            <!-- Tone Selection -->
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.20165 9.19833C2.0755 9.19876 1.95181 9.16338 1.84496 9.09631C1.73811 9.02924 1.65248 8.93323 1.59802 8.81943C1.54357 8.70563 1.52252 8.57872 1.53732 8.45343C1.55213 8.32815 1.60218 8.20964 1.68166 8.11166L8.28165 1.31166C8.33116 1.25452 8.39863 1.2159 8.47298 1.20215C8.54732 1.1884 8.62414 1.20034 8.69081 1.236C8.75748 1.27166 8.81004 1.32893 8.83988 1.3984C8.86971 1.46788 8.87504 1.54543 8.85499 1.61833L7.57499 5.63166C7.53724 5.73268 7.52457 5.84134 7.53805 5.94833C7.55153 6.05533 7.59076 6.15745 7.65238 6.24595C7.714 6.33444 7.79617 6.40667 7.89184 6.45644C7.98751 6.5062 8.09382 6.53201 8.20165 6.53166H12.8683C12.9945 6.53123 13.1182 6.56661 13.225 6.63368C13.3319 6.70075 13.4175 6.79676 13.472 6.91056C13.5264 7.02436 13.5475 7.15127 13.5327 7.27656C13.5179 7.40184 13.4678 7.52036 13.3883 7.61833L6.78832 14.4183C6.73881 14.4755 6.67135 14.5141 6.597 14.5278C6.52265 14.5416 6.44584 14.5297 6.37917 14.494C6.3125 14.4583 6.25993 14.4011 6.2301 14.3316C6.20026 14.2621 6.19494 14.1846 6.21499 14.1117L7.49499 10.0983C7.53273 9.99731 7.54541 9.88865 7.53193 9.78166C7.51845 9.67467 7.47921 9.57254 7.41759 9.48405C7.35597 9.39555 7.27381 9.32332 7.17814 9.27356C7.08247 9.22379 6.97616 9.19798 6.86832 9.19833H2.20165Z" stroke="#059ED1" stroke-width="1.33301" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <label class="text-sm font-medium text-gray-800 ml-2">Tone</label>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <button 
+                                        type="button"
+                                        @click="selectedTone = selectedTone === 'positive' ? null : 'positive'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedTone === 'positive' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Positive
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedTone = selectedTone === 'neutral' ? null : 'neutral'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedTone === 'neutral' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Neutral
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedTone = selectedTone === 'negative' ? null : 'negative'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedTone === 'negative' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Negative
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Emotion Selection -->
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.20165 9.19833C2.0755 9.19876 1.95181 9.16338 1.84496 9.09631C1.73811 9.02924 1.65248 8.93323 1.59802 8.81943C1.54357 8.70563 1.52252 8.57872 1.53732 8.45343C1.55213 8.32815 1.60218 8.20964 1.68166 8.11166L8.28165 1.31166C8.33116 1.25452 8.39863 1.2159 8.47298 1.20215C8.54732 1.1884 8.62414 1.20034 8.69081 1.236C8.75748 1.27166 8.81004 1.32893 8.83988 1.3984C8.86971 1.46788 8.87504 1.54543 8.85499 1.61833L7.57499 5.63166C7.53724 5.73268 7.52457 5.84134 7.53805 5.94833C7.55153 6.05533 7.59076 6.15745 7.65238 6.24595C7.714 6.33444 7.79617 6.40667 7.89184 6.45644C7.98751 6.5062 8.09382 6.53201 8.20165 6.53166H12.8683C12.9945 6.53123 13.1182 6.56661 13.225 6.63368C13.3319 6.70075 13.4175 6.79676 13.472 6.91056C13.5264 7.02436 13.5475 7.15127 13.5327 7.27656C13.5179 7.40184 13.4678 7.52036 13.3883 7.61833L6.78832 14.4183C6.73881 14.4755 6.67135 14.5141 6.597 14.5278C6.52265 14.5416 6.44584 14.5297 6.37917 14.494C6.3125 14.4583 6.25993 14.4011 6.2301 14.3316C6.20026 14.2621 6.19494 14.1846 6.21499 14.1117L7.49499 10.0983C7.53273 9.99731 7.54541 9.88865 7.53193 9.78166C7.51845 9.67467 7.47921 9.57254 7.41759 9.48405C7.35597 9.39555 7.27381 9.32332 7.17814 9.27356C7.08247 9.22379 6.97616 9.19798 6.86832 9.19833H2.20165Z" stroke="#059ED1" stroke-width="1.33301" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <label class="text-sm font-medium text-gray-800 ml-2">Emotion</label>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <button 
+                                        type="button"
+                                        @click="selectedEmotion = selectedEmotion === 'complain' ? null : 'complain'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedEmotion === 'complain' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Complain
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedEmotion = selectedEmotion === 'debate' ? null : 'debate'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedEmotion === 'debate' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Debate
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedEmotion = selectedEmotion === 'happy' ? null : 'happy'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedEmotion === 'happy' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Happy
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedEmotion = selectedEmotion === 'disagreement' ? null : 'disagreement'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedEmotion === 'disagreement' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Disagreement
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Focus Areas Selection -->
+                            <div class="mb-6">
+                                <div class="flex items-center mb-3">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.20165 9.19833C2.0755 9.19876 1.95181 9.16338 1.84496 9.09631C1.73811 9.02924 1.65248 8.93323 1.59802 8.81943C1.54357 8.70563 1.52252 8.57872 1.53732 8.45343C1.55213 8.32815 1.60218 8.20964 1.68166 8.11166L8.28165 1.31166C8.33116 1.25452 8.39863 1.2159 8.47298 1.20215C8.54732 1.1884 8.62414 1.20034 8.69081 1.236C8.75748 1.27166 8.81004 1.32893 8.83988 1.3984C8.86971 1.46788 8.87504 1.54543 8.85499 1.61833L7.57499 5.63166C7.53724 5.73268 7.52457 5.84134 7.53805 5.94833C7.55153 6.05533 7.59076 6.15745 7.65238 6.24595C7.714 6.33444 7.79617 6.40667 7.89184 6.45644C7.98751 6.5062 8.09382 6.53201 8.20165 6.53166H12.8683C12.9945 6.53123 13.1182 6.56661 13.225 6.63368C13.3319 6.70075 13.4175 6.79676 13.472 6.91056C13.5264 7.02436 13.5475 7.15127 13.5327 7.27656C13.5179 7.40184 13.4678 7.52036 13.3883 7.61833L6.78832 14.4183C6.73881 14.4755 6.67135 14.5141 6.597 14.5278C6.52265 14.5416 6.44584 14.5297 6.37917 14.494C6.3125 14.4583 6.25993 14.4011 6.2301 14.3316C6.20026 14.2621 6.19494 14.1846 6.21499 14.1117L7.49499 10.0983C7.53273 9.99731 7.54541 9.88865 7.53193 9.78166C7.51845 9.67467 7.47921 9.57254 7.41759 9.48405C7.35597 9.39555 7.27381 9.32332 7.17814 9.27356C7.08247 9.22379 6.97616 9.19798 6.86832 9.19833H2.20165Z" stroke="#059ED1" stroke-width="1.33301" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <label class="text-sm font-medium text-gray-800 ml-2">Focus Areas</label>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <button 
+                                        type="button"
+                                        @click="selectedFocusArea = selectedFocusArea === 'offers' ? null : 'offers'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedFocusArea === 'offers' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Offers
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedFocusArea = selectedFocusArea === 'app' ? null : 'app'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedFocusArea === 'app' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        App
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedFocusArea = selectedFocusArea === 'usability' ? null : 'usability'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedFocusArea === 'usability' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Usability
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedFocusArea = selectedFocusArea === 'games' ? null : 'games'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedFocusArea === 'games' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Games
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedFocusArea = selectedFocusArea === 'support' ? null : 'support'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedFocusArea === 'support' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Support
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Comment Length Selection -->
+                            <div>
+                                <div class="flex items-center mb-3">
+                                    <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.20165 9.19833C2.0755 9.19876 1.95181 9.16338 1.84496 9.09631C1.73811 9.02924 1.65248 8.93323 1.59802 8.81943C1.54357 8.70563 1.52252 8.57872 1.53732 8.45343C1.55213 8.32815 1.60218 8.20964 1.68166 8.11166L8.28165 1.31166C8.33116 1.25452 8.39863 1.2159 8.47298 1.20215C8.54732 1.1884 8.62414 1.20034 8.69081 1.236C8.75748 1.27166 8.81004 1.32893 8.83988 1.3984C8.86971 1.46788 8.87504 1.54543 8.85499 1.61833L7.57499 5.63166C7.53724 5.73268 7.52457 5.84134 7.53805 5.94833C7.55153 6.05533 7.59076 6.15745 7.65238 6.24595C7.714 6.33444 7.79617 6.40667 7.89184 6.45644C7.98751 6.5062 8.09382 6.53201 8.20165 6.53166H12.8683C12.9945 6.53123 13.1182 6.56661 13.225 6.63368C13.3319 6.70075 13.4175 6.79676 13.472 6.91056C13.5264 7.02436 13.5475 7.15127 13.5327 7.27656C13.5179 7.40184 13.4678 7.52036 13.3883 7.61833L6.78832 14.4183C6.73881 14.4755 6.67135 14.5141 6.597 14.5278C6.52265 14.5416 6.44584 14.5297 6.37917 14.494C6.3125 14.4583 6.25993 14.4011 6.2301 14.3316C6.20026 14.2621 6.19494 14.1846 6.21499 14.1117L7.49499 10.0983C7.53273 9.99731 7.54541 9.88865 7.53193 9.78166C7.51845 9.67467 7.47921 9.57254 7.41759 9.48405C7.35597 9.39555 7.27381 9.32332 7.17814 9.27356C7.08247 9.22379 6.97616 9.19798 6.86832 9.19833H2.20165Z" stroke="#059ED1" stroke-width="1.33301" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <label class="text-sm font-medium text-gray-800 ml-2">Comment Length</label>
+                                </div>
+                                <div class="flex space-x-3">
+                                    <button 
+                                        type="button"
+                                        @click="selectedCommentLength = selectedCommentLength === 'short' ? null : 'short'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedCommentLength === 'short' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Short
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedCommentLength = selectedCommentLength === 'medium' ? null : 'medium'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedCommentLength === 'medium' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Medium
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        @click="selectedCommentLength = selectedCommentLength === 'long' ? null : 'long'"
+                                        :class="[
+                                            'px-4 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                                            selectedCommentLength === 'long' 
+                                                ? 'bg-[#ECEDFD] text-black' 
+                                                : 'text-gray-700 hover:bg-gray-50'
+                                        ]"
+                                    >
+                                        Long
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Generate Rating Button -->
-                <div class="flex justify-center mb-8">
-                    <button 
-                        @click="generateReview"
-                        :disabled="isLoading"
-                        class="inline-flex items-center px-6 py-3 text-base font-medium rounded-xl text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                        :style="{ backgroundColor: 'hsl(239, 84%, 67%)' }"
-                    >
-                        <template v-if="isLoading">
-                            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Generating...
-                        </template>
-                        <template v-else>
-                            Generate Rating
-                        </template>
-                    </button>
-                </div>
-
-                <!-- Fading Horizontal Line -->
-                <div class="flex items-center justify-center mb-8">
-                    <div class="w-full max-w-4xl mx-auto flex items-center">
-                        <div class="flex-grow h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-                    </div>
-                </div>
-
-                <div v-if="generatedReviews.length" class="generated-reviews">
+                <!-- Generated Reviews - Full Width -->
+                <div v-if="generatedReviews.length" class="generated-reviews mt-8">
                     <article class="p-8">
                         <div class="flex justify-between items-center mb-6">
                             <h1 class="text-2xl font-bold text-gray-900">Generated Reviews</h1>
-                            <!-- <a href="https://www.gambling.com/uk/poker-sites/gg-poker" class="text-sm font-medium text-blue-600 hover:underline" target="_blank">Read all reviews</a> -->
                         </div>
-                        <div v-for="(review, index) in generatedReviews" :key="index" class="bg-white/90 rounded-lg shadow-sm border border-gray-100 p-6 mb-6">
+                        <div v-for="(review, index) in generatedReviews" :key="index" class="bg-white/80 rounded-lg shadow-sm border border-gray-100 p-6 mb-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div class="flex items-center">
-                                    <!-- <div class="h-8 w-8 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <span class="text-blue-800 font-semibold">{{ index + 1 }}</span>
-                                    </div> -->
                                     <div class="flex items-center mb-4">
                                         <svg :fill="review.botColor" viewBox="0 0 32.00 32.00" id="icon" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>chat-bot</title><path d="M16,19a6.9908,6.9908,0,0,1-5.833-3.1287l1.666-1.1074a5.0007,5.0007,0,0,0,8.334,0l1.666,1.1074A6.9908,6.9908,0,0,1,16,19Z"></path><path d="M20,8a2,2,0,1,0,2,2A1.9806,1.9806,0,0,0,20,8Z"></path><path d="M12,8a2,2,0,1,0,2,2A1.9806,1.9806,0,0,0,12,8Z"></path><path d="M17.7358,30,16,29l4-7h6a1.9966,1.9966,0,0,0,2-2V6a1.9966,1.9966,0,0,0-2-2H6A1.9966,1.9966,0,0,0,4,6V20a1.9966,1.9966,0,0,0,2,2h9v2H6a3.9993,3.9993,0,0,1-4-4V6A3.9988,3.9988,0,0,1,6,2H26a3.9988,3.9988,0,0,1,4,4V20a3.9993,3.9993,0,0,1-4,4H21.1646Z"></path><rect id="_Transparent_Rectangle_" data-name="<Transparent Rectangle>" class="fill-none" width="32" height="32"></rect></g></svg>
                                         <div class="font-medium text-gray-900">
@@ -293,7 +554,7 @@
                                                 <div class="w-full bg-gray-200 rounded-sm h-2.5 me-2">
                                                     <div :class="getProgressBarColor(data.answer)" class="h-2.5 rounded-sm transition-colors duration-300" :style="{ width: `${calculateWidth(data)}%` }"></div>
                                                 </div>
-                                                <span class="text-sm font-semibold text-gray-900 min-w-[3rem]">{{ data.answer }}</span>
+                                                <span class="text-sm font-semibold text-gray-900 min-w-[3rem]">{{ data.answer }}/10</span>
                                             </dd>
                                         </dl>
                                     </div>
@@ -304,7 +565,7 @@
                                                 <div class="w-full bg-gray-200 rounded-sm h-2.5 me-2">
                                                     <div :class="getProgressBarColor(data.answer)" class="h-2.5 rounded-sm transition-colors duration-300" :style="{ width: `${calculateWidth(data)}%` }"></div>
                                                 </div>
-                                                <span class="text-sm font-semibold text-gray-900 min-w-[3rem]">{{ data.answer }}</span>
+                                                <span class="text-sm font-semibold text-gray-900 min-w-[3rem]">{{ data.answer }}/10</span>
                                             </dd>
                                         </dl>
                                     </div>
@@ -315,78 +576,6 @@
                             <p class="mb-2 text-gray-700">{{ review.data }}</p>
                         </div>
                     </article>
-                </div>
-
-                <!-- Settings Modal -->
-                <div v-if="showSettingsModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-                    <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-medium text-gray-900">Review Generator Settings</h3>
-                            <button @click="showSettingsModal = false" class="text-gray-400 hover:text-gray-500">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                        <form @submit.prevent="saveSettings" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Score (1-10)</label>
-                                <input 
-                                    type="number" 
-                                    v-model="formParams.score" 
-                                    min="1" 
-                                    max="10"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                                >
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Character Max</label>
-                                <input 
-                                    type="number" 
-                                    v-model="formParams.character_max" 
-                                    min="50"
-                                    max="200"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                                >
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Statements</label>
-                                <input 
-                                    type="number" 
-                                    v-model="formParams.statements" 
-                                    min="1"
-                                    max="5"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                                >
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">Model</label>
-                                <select 
-                                    v-model="formParams.model"
-                                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                                >
-                                    <option v-for="option in modelOptions" :key="option.value" :value="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="flex justify-end space-x-3 mt-6">
-                                <button 
-                                    type="button"
-                                    @click="showSettingsModal = false"
-                                    class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                >
-                                    Cancel
-                                </button>
-                                <button 
-                                    type="submit"
-                                    class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                                >
-                                    Save Changes
-                                </button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -452,7 +641,11 @@ export default {
                 { value: 'GR', label: 'Greek' },
                 { value: 'DE', label: 'German' },
                 { value: 'ES', label: 'Spanish' }
-            ]
+            ],
+            selectedTone: null,
+            selectedEmotion: null,
+            selectedFocusArea: null,
+            selectedCommentLength: null
         }
     },
     mounted() {
@@ -498,11 +691,15 @@ export default {
             this.showReviewDetails = !this.showReviewDetails;
         },
         calculateWidth(data) {
-            // Direct percentage calculation: 1 = 20%, 2 = 40%, 3 = 60%, 4 = 80%, 5 = 100%
-            return (data.answer * 20);
+            // Calculate percentage for 1-10 range
+            return (data.answer * 10);
         },
         getProgressBarColor(score) {
-            return 'bg-yellow-400'; // Always return yellow color
+            // Color based on 1-10 range
+            if (score >= 8) return 'bg-green-500';
+            if (score >= 6) return 'bg-yellow-400';
+            if (score >= 4) return 'bg-orange-400';
+            return 'bg-red-500';
         },
         getRandomJoinDate() {
             const now = new Date();
@@ -615,41 +812,42 @@ export default {
         },
         getRatingStars(review) {
             const score = parseFloat(this.getTotalScore(review));
-            const fullStars = Math.floor(score);
-            const decimal = score - fullStars;
+            const fullStars = Math.floor(Math.min(5, score / 2)); // Ensure we don't exceed 5 stars
+            const decimal = Math.min(1, (score / 2) - fullStars); // Ensure decimal is between 0 and 1
+            const emptyStars = Math.max(0, 5 - fullStars - (decimal > 0 ? 1 : 0)); // Ensure we don't get negative empty stars
+            
             return {
                 full: fullStars,
-                partial: decimal * 10,
-                empty: 5 - fullStars - (decimal > 0 ? 1 : 0)
+                partial: decimal > 0 ? decimal * 10 : 0,
+                empty: emptyStars
             };
         },
         getTotalScore(review) {
             const ratings = review.rating;
             const validRatings = Object.values(ratings)
-                .filter(data => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating");
+                .filter(data => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating");
             const total = validRatings.reduce((sum, data) => sum + data.answer, 0);
             const count = validRatings.length;
             return (total / count).toFixed(1);
         },
         getRatingText(review) {
             const score = parseFloat(this.getTotalScore(review));
-            if (score >= 4.5) return 'Excellent';
-            if (score >= 4) return 'Very Good';
-            if (score >= 3.5) return 'Good';
+            if (score >= 9) return 'Excellent';
+            if (score >= 7) return 'Very Good';
+            if (score >= 5) return 'Good';
             if (score >= 3) return 'Fair';
-            if (score >= 2.5) return 'Poor';
-            return 'Very Poor';
+            return 'Poor';
         },
         getFirstColumnData(review) {
             const ratings = review.rating;
             return Object.entries(ratings)
-                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating")
+                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating")
                 .slice(0, 4);
         },
         getSecondColumnData(review) {
             const ratings = review.rating;
             return Object.entries(ratings)
-                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating")
+                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating")
                 .slice(4);
         },
         saveSettings() {
@@ -688,20 +886,20 @@ export default {
         firstColumnData() {
             const ratings = this.reviewData.data.rating;
             return Object.entries(ratings)
-                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating")
+                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating")
                 .slice(0, 4);
         },
         secondColumnData() {
             const ratings = this.reviewData.data.rating;
             return Object.entries(ratings)
-                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating")
+                .filter(([_, data]) => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating")
                 .slice(4);
         },
         totalScore() {
             const ratings = this.reviewData.data.rating;
             // Filter out community thoughts and overall rating, then calculate average
             const validRatings = Object.values(ratings)
-                .filter(data => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Poker Site Rating");
+                .filter(data => data.query !== "Share your thoughts with our community:" && data.query !== "Overall Casino Rating");
             const total = validRatings.reduce((sum, data) => sum + data.answer, 0);
             const count = validRatings.length;
             return (total / count).toFixed(1);
@@ -718,12 +916,11 @@ export default {
         },
         ratingText() {
             const score = parseFloat(this.totalScore);
-            if (score >= 4.5) return 'Excellent';
-            if (score >= 4) return 'Very Good';
-            if (score >= 3.5) return 'Good';
+            if (score >= 9) return 'Excellent';
+            if (score >= 7) return 'Very Good';
+            if (score >= 5) return 'Good';
             if (score >= 3) return 'Fair';
-            if (score >= 2.5) return 'Poor';
-            return 'Very Poor';
+            return 'Poor';
         },
         reviewText() {
             const ratings = this.reviewData.data.rating;
