@@ -234,10 +234,10 @@
                     </div>
                 </div>
 
-                <div class="bg-white/80 backdrop-blur-lg overflow-hidden shadow-lg sm:rounded-lg">
+                <div v-if="generatedReviews.length" class="generated-reviews">
                     <article class="p-8">
                         <div class="flex justify-between items-center mb-6">
-                            <h1 class="text-2xl font-bold text-gray-900">GGPoker Review</h1>
+                            <h1 class="text-2xl font-bold text-gray-900">Generated Reviews</h1>
                             <!-- <a href="https://www.gambling.com/uk/poker-sites/gg-poker" class="text-sm font-medium text-blue-600 hover:underline" target="_blank">Read all reviews</a> -->
                         </div>
                         <div v-for="(review, index) in generatedReviews" :key="index" class="bg-white/90 rounded-lg shadow-sm border border-gray-100 p-6 mb-6">
@@ -390,6 +390,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-sm text-gray-600">© 2025 Gambling.com Group AI ReviewBuilder. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 </template>
 
@@ -406,58 +413,14 @@ export default {
             authUsername: import.meta.env.VITE_AUTH_USERNAME,
             authPassword: import.meta.env.VITE_AUTH_PASSWORD,
             apiBaseUrl: import.meta.env.VITE_API_BASE_URL,
-            reviewData: {
-                message: "SUCCESS",
-                data: {
-                    rating: {
-                        "1": {
-                            query: "Welcome Offer",
-                            answer: 5
-                        },
-                        "2": {
-                            query: "Cash Games",
-                            answer: 4
-                        },
-                        "3": {
-                            query: "Tournaments",
-                            answer: 5
-                        },
-                        "4": {
-                            query: "Liquidity",
-                            answer: 5
-                        },
-                        "5": {
-                            query: "Loyalty/Cashback",
-                            answer: 4
-                        },
-                        "6": {
-                            query: "Software Usability",
-                            answer: 5
-                        },
-                        "7": {
-                            query: "Payment Options",
-                            answer: 4
-                        },
-                        "8": {
-                            query: "Overall Poker Site Rating",
-                            answer: 5
-                        },
-                        "9": {
-                            query: "Share your thoughts with our community:",
-                            answer: "GGPoker's MTT schedule is simply *chef's kiss*! Fish everywhere at micro stakes; I've crushed WSOP events without breaking a sweat. Interface is slick AF but depositing via Skrill sometimes glitches. Still my go-to grind spot."
-                        }
-                    },
-                    username: 'SpinKing77'
-                }
-            },
             generatedReviews: [],
             isLoading: false,
             apiError: null,
             params: {
                 key: '1q2w3e4r',
                 product: '',
-                brand_name: 'GGPoker',
-                url: 'https://www.gambling.com/uk/poker-sites/gg-poker',
+                brand_name: '',
+                url: '',
                 score: '7',
                 character_max: '200',
                 statements: '1',
@@ -499,17 +462,6 @@ export default {
             ...this.formParams,
             ...this.params
         };
-        // Push initial review data
-        if (this.reviewData.message === "SUCCESS") {
-            this.generatedReviews.push({
-                data: this.reviewData.data.rating[9].answer,
-                showDetails: false,
-                rating: this.reviewData.data.rating,
-                username: this.reviewData.data.username,
-                joinDate: this.getRandomJoinDate(),
-                botColor: this.getRandomColor()
-            });
-        }
     },
     methods: {
         checkAuth() {
