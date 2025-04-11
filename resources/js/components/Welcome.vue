@@ -365,8 +365,7 @@
                       <span
                         class="inline-flex items-center px-2 rounded-full text-xs leading-[14px] font-medium border"
                       >
-                        <span class="text-[#6467F2]">{{ params.score }}</span>
-                        <span class="text-[#0F1729]">/10</span>
+                        <span class="text-[#0F1729] font-semibold text-xs">{{ params.score }}/10</span>
                       </span>
                     </div>
                     <div
@@ -2200,7 +2199,7 @@ export default {
       apiError: null,
       params: {
         key: "1q2w3e4r",
-        product: "",
+        product: "casino",
         brand_name: "",
         url: "",
         score: "7",
