@@ -60,23 +60,6 @@
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0 flex items-center">
-              <span class="rounded-full bg-[#9B87F5]">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.8333 1.66675L3.41163 10.0784C3.3094 10.1999 3.24399 10.348 3.22308 10.5053C3.20217 10.6627 3.22664 10.8227 3.29361 10.9667C3.36059 11.1106 3.46727 11.2324 3.60111 11.3177C3.73496 11.4031 3.89039 11.4484 4.04913 11.4484H8.3333L7.49997 18.1151L14.9216 9.70341C15.0239 9.58197 15.0893 9.43386 15.1102 9.27651C15.1311 9.11915 15.1066 8.95909 15.0397 8.81517C14.9727 8.67125 14.866 8.54945 14.7322 8.46411C14.5983 8.37876 14.4429 8.33342 14.2841 8.33341H11.6666L12.5 1.66675H10.8333Z"
-                    stroke="white"
-                    stroke-width="1.66667"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
               <span class="text-gray-900 text-base leading-7 font-semibold ml-2"
                 >Gambling.com Group</span
               >
@@ -124,7 +107,7 @@
             >
               <div class="p-4">
                 <h2 class="text-lg font-semibold text-gray-900 mb-6">
-                  AI Service Configuration
+                  AI Service
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
@@ -190,7 +173,7 @@
             >
               <div class="p-4">
                 <h2 class="text-lg font-semibold text-gray-900 mb-6">
-                  Brand Configuration
+                  Brand
                 </h2>
                 <div class="space-y-6">
                   <div class="flex gap-6">
