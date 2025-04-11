@@ -363,27 +363,31 @@
                         >Rating Score</label
                       >
                       <span
-                        class="inline-flex items-center px-2 rounded-full text-xs leading-[14px] font-medium text-grey-200 border"
+                        class="inline-flex items-center px-2 rounded-full text-xs leading-[14px] font-medium border"
                       >
-                        {{ params.score }}/10
+                        <span class="text-[#6467F2]">{{ params.score }}</span>
+                        <span class="text-[#0F1729]">/10</span>
                       </span>
                     </div>
                     <div
                       class="relative w-full h-2 rounded-full cursor-pointer group"
                       @mousemove="handleMouseMove"
                       @click="handleClick"
+                      @touchstart.prevent="handleTouch"
+                      @touchmove.prevent="handleTouch"
+                      @touchend.prevent="handleTouchEnd"
                       ref="progressBar"
                       style="background: #059ed1"
                     >
                       <div
                         class="absolute top-0 left-0 h-full rounded-full transition-all duration-200"
                         :style="{
-                          width: `${params.score * 10}%`,
+                          width: `${(exactScore || params.score) * 10}%`,
                           backgroundColor: 'hsl(239, 84%, 67%)',
                         }"
                       >
                         <div
-                          class="absolute -right-4 top-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full border-2 transition-transform duration-200 transform group-hover:scale-110 group-hover:shadow-lg"
+                          class="absolute -right-2.5 top-1/2 -translate-y-1/2 w-5 h-5 bg-white rounded-full border-2 transition-transform duration-200 transform group-hover:scale-110 group-hover:shadow-lg"
                           :style="{ borderColor: 'hsl(239, 84%, 67%)' }"
                         ></div>
                       </div>
@@ -2236,6 +2240,7 @@ export default {
       selectedWritingStyle: "casual",
       selectedMotivation: "to win big",
       selectedFocusArea: "offers",
+      exactScore: null,
     };
   },
   mounted() {
@@ -2521,10 +2526,34 @@ export default {
       const width = rect.width;
       let percentage = (x / width) * 100;
       percentage = Math.max(0, Math.min(100, percentage));
-      // Calculate score as a whole number between 1 and 10
-      let score = Math.round(percentage / 10);
+      
+      // Calculate exact score between 1 and 10 with one decimal place
+      let score = (percentage / 10).toFixed(1);
       score = Math.max(1, Math.min(10, score));
-      this.params.score = score.toString();
+      
+      // Update both the display and query parameter with the exact decimal value
+      this.exactScore = score;
+      this.params.score = Math.round(this.exactScore);
+    },
+    handleTouchEnd(event) {
+      // Add any additional logic you want to execute when touch ends
+      console.log('Touch ended');
+    },
+    handleTouch(event) {
+      const touch = event.touches[0];
+      const rect = this.$refs.progressBar.getBoundingClientRect();
+      const x = touch.clientX - rect.left;
+      const width = rect.width;
+      let percentage = (x / width) * 100;
+      percentage = Math.max(0, Math.min(100, percentage));
+      
+      // Calculate exact score between 1 and 10 with one decimal place
+      let score = (percentage / 10).toFixed(1);
+      score = Math.max(1, Math.min(10, score));
+      
+      // Update both the display and query parameter with the exact decimal value
+      this.exactScore = score;
+      this.params.score = Math.round(this.exactScore);
     },
   },
   computed: {
