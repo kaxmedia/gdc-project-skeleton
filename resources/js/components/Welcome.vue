@@ -479,7 +479,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Player Type</label
                     >
                   </div>
@@ -856,7 +856,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Experience Level</label
                     >
                   </div>
@@ -990,7 +990,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Personality</label
                     >
                   </div>
@@ -1178,7 +1178,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Tone of Voice</label
                     >
                   </div>
@@ -1362,7 +1362,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Writing Style</label
                     >
                   </div>
@@ -1566,7 +1566,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Motivation for Playing</label
                     >
                   </div>
@@ -1766,7 +1766,7 @@
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <label class="text-sm font-medium text-gray-800 ml-2"
+                    <label class="text-sm font-bold text-[#0F1729] ml-2"
                       >Focus Area</label
                     >
                   </div>
@@ -1850,6 +1850,37 @@
                     </button>
                   </div>
                 </div>
+
+                <!-- Persona Preview -->
+                <div class="py-2 rounded-lg" style="background: linear-gradient(0deg, #f8fafc 0%, #f8fafc 100%), linear-gradient(0deg, #f8fafc 0%, #f8fafc 100%), #fff;">
+                  <div class="flex items-center mb-4 px-4">
+                    <h3 class="text-sm font-bold text-[#0F1729]">Persona Preview</h3>
+                  </div>
+                  <div class="flex flex-wrap gap-2 px-4 pb-4">
+                    <span v-if="selectedPlayerType" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedPlayerType }}
+                    </span>
+                    <span v-if="selectedExperienceLevel" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedExperienceLevel }}
+                    </span>
+                    <span v-if="selectedPersonality" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedPersonality }}
+                    </span>
+                    <span v-if="selectedTone" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedTone }}
+                    </span>
+                    <span v-if="selectedWritingStyle" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedWritingStyle }}
+                    </span>
+                    <span v-if="selectedMotivation" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedMotivation }}
+                    </span>
+                    <span v-if="selectedFocusArea" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
+                      {{ selectedFocusArea }}
+                    </span>
+                  </div>
+                </div>
+
               </div>
               <!-- Generate Rating Button -->
               <div class="flex justify-center mt-8 mb-8">
