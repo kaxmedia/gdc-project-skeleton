@@ -1553,7 +1553,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Motivation for Playing <i class="text-xs text-[#0F1729] font-normal">*required</i></label
+                      >Motivation for Playing <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -1753,7 +1753,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Focus Area <i class="text-xs text-[#0F1729] font-normal">*required</i></label
+                      >Focus Area <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
