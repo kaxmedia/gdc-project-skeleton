@@ -467,7 +467,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Player Type</label
+                      >Player Type <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -844,7 +844,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Experience Level</label
+                      >Experience Level <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -978,7 +978,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Personality</label
+                      >Personality <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -1166,7 +1166,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Tone of Voice</label
+                      >Tone of Voice <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -1350,7 +1350,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Writing Style</label
+                      >Writing Style <i class="text-xs text-[#0F1729] font-normal">required*</i></label
                     >
                   </div>
                   <div
@@ -1554,7 +1554,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Motivation for Playing</label
+                      >Motivation for Playing <i class="text-xs text-[#0F1729] font-normal">*required</i></label
                     >
                   </div>
                   <div
@@ -1754,7 +1754,7 @@
                       />
                     </svg>
                     <label class="text-sm font-bold text-[#0F1729] ml-2"
-                      >Focus Area</label
+                      >Focus Area <i class="text-xs text-[#0F1729] font-normal">*required</i></label
                     >
                   </div>
                   <div
@@ -1841,7 +1841,7 @@
                 <!-- Persona Preview -->
                 <div class="py-2 rounded-lg" style="background: linear-gradient(0deg, #f8fafc 0%, #f8fafc 100%), linear-gradient(0deg, #f8fafc 0%, #f8fafc 100%), #fff;">
                   <div class="flex items-center mb-4 px-4">
-                    <h3 class="text-sm font-bold text-[#0F1729]">Persona Preview</h3>
+                    <h3 class="text-sm font-bold text-[#0F1729] underline decoration-[#0F1729] underline-offset-4">Persona Preview</h3>
                   </div>
                   <div class="flex flex-wrap gap-2 px-4 pb-4">
                     <span v-if="selectedPlayerType" class="px-2 py-1 rounded-[14px] text-xs font-medium bg-[#059ED1] text-[#F8FAFC] capitalize">
