@@ -25,10 +25,10 @@
             id="username"
             type="text"
             v-model="username"
-            class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
+            class="w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
             required
           />
-                </div>
+        </div>
         <div>
           <label
             for="password"
@@ -39,10 +39,10 @@
             id="password"
             type="password"
             v-model="password"
-            class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
+            class="w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-900 placeholder-gray-700"
             required
           />
-            </div>
+        </div>
         <div v-if="error" class="text-red-600 text-sm">{{ error }}</div>
         <button
           type="submit"
@@ -51,8 +51,8 @@
           Sign In
         </button>
       </form>
-        </div>
     </div>
+  </div>
   <div v-else>
     <!-- Navigation Bar -->
     <nav class="bg-white border-b border-gray-200">
@@ -87,7 +87,7 @@
               href="https://gdcgroup.atlassian.net/wiki/spaces/GDCC/pages/5598347298/AI+Innovation+Challenge+-+Reviews+Generator"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-gray-600 hover:text-gray-900 font-normal text-sm"
+              class="text-gray-600 hover:text-gray-900 font-normal text-sm hidden sm:block"
               >Project Overview</a
             >
           </div>
@@ -134,7 +134,7 @@
                     >
                     <select
                       v-model="formParams.model"
-                      class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                      class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                       style="
                         background: linear-gradient(
                             0deg,
@@ -160,7 +160,7 @@
                     >
                     <select
                       v-model="selectedLanguage"
-                      class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                      class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                       style="
                         background: linear-gradient(
                             0deg,
@@ -201,7 +201,7 @@
                       >
                       <select
                         v-model="params.product"
-                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                        class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
                               0deg,
@@ -232,7 +232,7 @@
                         type="text"
                         v-model="params.brand_name"
                         placeholder="Enter brand name"
-                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                        class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
                               0deg,
@@ -260,7 +260,7 @@
                       type="text"
                       v-model="params.url"
                       placeholder="Enter brand review URL"
-                      class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                      class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                       style="
                         background: linear-gradient(
                             0deg,
@@ -301,7 +301,7 @@
                         type="number"
                         v-model="params.character_max"
                         placeholder="Enter max characters"
-                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                        class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
                               0deg,
@@ -328,7 +328,7 @@
                         type="number"
                         v-model="params.statements"
                         placeholder="Enter number of sentences"
-                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                        class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
                               0deg,
@@ -355,7 +355,7 @@
                         type="number"
                         v-model="params.misspellings"
                         placeholder="Enter number of misspellings"
-                        class="w-full px-3 py-2 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
+                        class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
                               0deg,
