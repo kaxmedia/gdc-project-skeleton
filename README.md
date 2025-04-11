@@ -1,4 +1,4 @@
-# GDC Project Skeleton
+# AI Reviews Generator
 
 This is a basic Laravel project setup with Vue.js and TailwindCSS integration, featuring a review component with authentication.
 

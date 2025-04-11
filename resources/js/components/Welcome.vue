@@ -78,7 +78,7 @@
                 </svg>
               </span>
               <span class="text-gray-900 text-base leading-7 font-semibold ml-2"
-                >Gambling.com Group AI ReviewBuilder</span
+                >Gambling.com Group</span
               >
             </div>
           </div>
@@ -111,7 +111,7 @@
           <div class="space-y-4">
             <div class="">
               <h1 class="text-3xl font-bold text-gray-900 mb-2">
-                AI Rating Generator
+                AI Reviews Generator
               </h1>
               <p class="text-base text-gray-600">
                 Create realistic user reviews using AI services
