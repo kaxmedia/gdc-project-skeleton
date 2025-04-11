@@ -12,7 +12,7 @@
       class="max-w-md w-full mx-auto p-6 bg-white/80 backdrop-blur-lg rounded-lg shadow-lg border border-gray-200 relative z-10"
     >
       <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
-        Authentication Required
+        Login
       </h2>
       <form @submit.prevent="handleSubmit" class="space-y-4">
         <div>
@@ -231,7 +231,7 @@
                       <input
                         type="text"
                         v-model="params.brand_name"
-                        placeholder="Enter brand name"
+                        placeholder="Pub Casino"
                         class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                         style="
                           background: linear-gradient(
@@ -259,7 +259,7 @@
                     <input
                       type="text"
                       v-model="params.url"
-                      placeholder="Enter brand review URL"
+                      placeholder="https://www.gambling.com/uk/online-casinos/pub-casino"
                       class="w-full px-3 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                       style="
                         background: linear-gradient(
@@ -1970,7 +1970,11 @@
             <article class="bg-white/80 backdrop-blur-lg overflow-hidden sm:rounded-lg border border-[#E1E7EF]" style="box-shadow: 0px 1px 2px 0px #0000000D;">
               <div class="p-4">
                 <div class="flex justify-between items-center mb-6">
-                  <h1 class="text-[23px] leading-8 font-semibold text-gray-900">Generated Reviews</h1>
+                  <h1 class="text-xl font-semibold text-gray-900">Generated Reviews</h1>
+                  <div class="border border-[#E1E7EF] flex items-center gap-1 rounded-full px-1.5 py-1">
+                    <span class="text-[#6467F2] text-[12px] leading-[16px] font-semibold">{{ generatedReviews.length }}</span>
+                    <span class="text-[#0F1729] text-[12px] leading-[16px] font-semibold">{{ generatedReviews.length === 1 ? ' review' : ' reviews' }}</span>
+                  </div>
                 </div>
                 <div v-for="(review, index) in generatedReviews" :key="index" class="bg-white/80 backdrop-blur-lg overflow-hidden sm:rounded-lg border border-[#E1E7EF] p-6 mb-6" style="box-shadow: 0px 1px 2px 0px #0000000D;">
                   <div class="flex items-start justify-between">
