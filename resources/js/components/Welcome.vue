@@ -835,23 +835,23 @@
                     class="flex items-center mb-2 bg-[#F8FAFC] p-0.5 rounded-lg"
                   >
                     <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M12.6658 13.9996V12.6664C12.6658 11.9592 12.3849 11.281 11.8849 10.781C11.3848 10.2809 10.7066 10 9.99945 10H5.99988C5.29271 10 4.61451 10.2809 4.11446 10.781C3.61442 11.281 3.3335 11.9592 3.3335 12.6664V13.9996"
+                        d="M11.188 9.13306L12.198 14.8171C12.2093 14.884 12.1999 14.9528 12.1711 15.0142C12.1422 15.0757 12.0953 15.1269 12.0366 15.1609C11.9779 15.195 11.9102 15.2103 11.8425 15.2049C11.7749 15.1994 11.7105 15.1734 11.658 15.1304L9.27133 13.3391C9.15611 13.253 9.01615 13.2065 8.87233 13.2065C8.72851 13.2065 8.58855 13.253 8.47333 13.3391L6.08266 15.1297C6.03021 15.1727 5.96591 15.1986 5.89833 15.2041C5.83075 15.2095 5.76311 15.1943 5.70444 15.1603C5.64577 15.1263 5.59885 15.0753 5.56994 15.0139C5.54104 14.9526 5.53152 14.8839 5.54266 14.8171L6.552 9.13306"
                         stroke="#059ED1"
-                        stroke-width="1.33319"
+                        stroke-width="1.33301"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M7.99988 7.33277C9.47248 7.33277 10.6663 6.13899 10.6663 4.66638C10.6663 3.19378 9.47248 2 7.99988 2C6.52728 2 5.3335 3.19378 5.3335 4.66638C5.3335 6.13899 6.52728 7.33277 7.99988 7.33277Z"
+                        d="M8.86999 9.87305C11.0791 9.87305 12.87 8.08219 12.87 5.87305C12.87 3.66391 11.0791 1.87305 8.86999 1.87305C6.66086 1.87305 4.87 3.66391 4.87 5.87305C4.87 8.08219 6.66086 9.87305 8.86999 9.87305Z"
                         stroke="#059ED1"
-                        stroke-width="1.33319"
+                        stroke-width="1.33301"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
@@ -1171,7 +1171,7 @@
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M2.2 9.2C2.08 9.2 1.95 9.16 1.84 9.1C1.74 9.03 1.65 8.93 1.6 8.82C1.54 8.71 1.52 8.58 1.54 8.45C1.55 8.33 1.6 8.21 1.68 8.11L8.28 1.31C8.33 1.25 8.4 1.22 8.47 1.2C8.55 1.19 8.62 1.2 8.69 1.24C8.76 1.27 8.81 1.33 8.84 1.4C8.87 1.47 8.88 1.55 8.85 1.62L7.57 5.63C7.54 5.73 7.52 5.84 7.54 5.95C7.55 6.06 7.59 6.16 7.65 6.25C7.71 6.33 7.8 6.41 7.89 6.46C7.99 6.51 8.09 6.53 8.2 6.53H12.87C12.99 6.53 13.12 6.57 13.22 6.63C13.33 6.7 13.42 6.8 13.47 6.91C13.53 7.02 13.55 7.15 13.53 7.28C13.52 7.4 13.47 7.52 13.39 7.62L6.79 14.42C6.74 14.48 6.67 14.51 6.6 14.53C6.52 14.54 6.45 14.53 6.38 14.49C6.31 14.46 6.26 14.4 6.23 14.33C6.2 14.26 6.19 14.18 6.21 14.11L7.49 10.1C7.53 10 7.55 9.89 7.53 9.78C7.52 9.67 7.48 9.57 7.42 9.48C7.36 9.4 7.27 9.32 7.18 9.27C7.08 9.22 6.98 9.2 6.87 9.2H2.2Z"
+                        d="M14.87 12.5298C14.87 12.8834 14.7295 13.2225 14.4795 13.4726C14.2294 13.7226 13.8903 13.8631 13.5367 13.8631H5.53666L2.87 16.5298V5.86312C2.87 5.5095 3.01047 5.17036 3.26052 4.92031C3.51057 4.67026 3.84971 4.52979 4.20333 4.52979H13.5367C13.8903 4.52979 14.2294 4.67026 14.4795 4.92031C14.7295 5.17036 14.87 5.5095 14.87 5.86312V12.5298Z"
                         stroke="#059ED1"
                         stroke-width="1.33301"
                         stroke-linecap="round"
@@ -1552,16 +1552,16 @@
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M12.6658 13.9996V12.6664C12.6658 11.9592 12.3849 11.281 11.8849 10.781C11.3848 10.2809 10.7066 10 9.99945 10H5.99988C5.29271 10 4.61451 10.2809 4.11446 10.781C3.61442 11.281 3.3335 11.9592 3.3335 12.6664V13.9996"
+                        d="M8.87 7.17651V16.5098"
                         stroke="#059ED1"
-                        stroke-width="1.33319"
+                        stroke-width="1.33301"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                       <path
-                        d="M7.99988 7.33277C9.47248 7.33277 10.6663 6.13899 10.6663 4.66638C10.6663 3.19378 9.47248 2 7.99988 2C6.52728 2 5.3335 3.19378 5.3335 4.66638C5.3335 6.13899 6.52728 7.33277 7.99988 7.33277Z"
+                        d="M2.87 14.5098C2.69319 14.5098 2.52362 14.4395 2.39859 14.3145C2.27357 14.1895 2.20333 14.0199 2.20333 13.8431V5.17643C2.20333 4.99962 2.27357 4.83005 2.39859 4.70503C2.52362 4.58 2.69319 4.50977 2.87 4.50977H6.20333C6.91057 4.50977 7.58885 4.79072 8.08895 5.29081C8.58905 5.79091 8.87 6.46919 8.87 7.17643C8.87 6.46919 9.15095 5.79091 9.65105 5.29081C10.1511 4.79072 10.8294 4.50977 11.5367 4.50977H14.87C15.0468 4.50977 15.2164 4.58 15.3414 4.70503C15.4664 4.83005 15.5367 4.99962 15.5367 5.17643V13.8431C15.5367 14.0199 15.4664 14.1895 15.3414 14.3145C15.2164 14.4395 15.0468 14.5098 14.87 14.5098H10.87C10.3396 14.5098 9.83086 14.7205 9.45578 15.0956C9.08071 15.4706 8.87 15.9793 8.87 16.5098C8.87 15.9793 8.65928 15.4706 8.28421 15.0956C7.90914 14.7205 7.40043 14.5098 6.87 14.5098H2.87Z"
                         stroke="#059ED1"
-                        stroke-width="1.33319"
+                        stroke-width="1.33301"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
@@ -1742,6 +1742,111 @@
                       ]"
                     >
                       Because of Habit
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Focus Area Selection -->
+                <div class="py-2">
+                  <div
+                    class="flex items-center mb-2 bg-[#F8FAFC] p-0.5 rounded-lg"
+                  >
+                    <svg
+                      width="17"
+                      height="17"
+                      viewBox="0 0 17 17"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.53666 9.83303C3.41051 9.83346 3.28682 9.79809 3.17996 9.73102C3.07311 9.66395 2.98748 9.56794 2.93303 9.45414C2.87857 9.34034 2.85752 9.21343 2.87233 9.08814C2.88713 8.96285 2.93718 8.84434 3.01666 8.74637L9.61666 1.94637C9.66617 1.88922 9.73363 1.85061 9.80798 1.83686C9.88233 1.82311 9.95914 1.83504 10.0258 1.8707C10.0925 1.90637 10.1451 1.96363 10.1749 2.03311C10.2047 2.10258 10.21 2.18013 10.19 2.25304L8.91 6.26637C8.87225 6.36738 8.85958 6.47605 8.87306 6.58304C8.88654 6.69003 8.92577 6.79215 8.98739 6.88065C9.04901 6.96915 9.13118 7.04138 9.22685 7.09114C9.32251 7.1409 9.42883 7.16672 9.53666 7.16637H14.2033C14.3295 7.16594 14.4532 7.20131 14.56 7.26838C14.6669 7.33545 14.7525 7.43146 14.807 7.54526C14.8614 7.65906 14.8825 7.78598 14.8677 7.91126C14.8529 8.03655 14.8028 8.15506 14.7233 8.25303L8.12333 15.053C8.07382 15.1102 8.00636 15.1488 7.93201 15.1625C7.85766 15.1763 7.78085 15.1644 7.71417 15.1287C7.6475 15.093 7.59494 15.0358 7.5651 14.9663C7.53527 14.8968 7.52994 14.8193 7.55 14.7464L8.82999 10.733C8.86774 10.632 8.88041 10.5234 8.86693 10.4164C8.85345 10.3094 8.81422 10.2072 8.7526 10.1187C8.69098 10.0303 8.60881 9.95802 8.51314 9.90826C8.41748 9.8585 8.31116 9.83268 8.20333 9.83303H3.53666Z"
+                        stroke="#059ED1"
+                        stroke-width="1.33301"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <label class="text-sm font-medium text-gray-800 ml-2"
+                      >Focus Area</label
+                    >
+                  </div>
+                  <div
+                    class="inline-flex flex-wrap gap-1 w-full bg-[#F8FAFC] p-2 rounded-lg mt-2"
+                  >
+                    <button
+                      type="button"
+                      @click="
+                        selectedFocusArea =
+                          selectedFocusArea === 'offers' ? null : 'offers'
+                      "
+                      :class="[
+                        'px-2 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                        selectedFocusArea === 'offers'
+                          ? 'bg-[#ECEDFD] text-black'
+                          : 'text-gray-700 hover:bg-gray-50',
+                      ]"
+                    >
+                      Offers
+                    </button>
+                    <button
+                      type="button"
+                      @click="
+                        selectedFocusArea =
+                          selectedFocusArea === 'app' ? null : 'app'
+                      "
+                      :class="[
+                        'px-2 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                        selectedFocusArea === 'app'
+                          ? 'bg-[#ECEDFD] text-black'
+                          : 'text-gray-700 hover:bg-gray-50',
+                      ]"
+                    >
+                      App
+                    </button>
+                    <button
+                      type="button"
+                      @click="
+                        selectedFocusArea =
+                          selectedFocusArea === 'usability' ? null : 'usability'
+                      "
+                      :class="[
+                        'px-2 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                        selectedFocusArea === 'usability'
+                          ? 'bg-[#ECEDFD] text-black'
+                          : 'text-gray-700 hover:bg-gray-50',
+                      ]"
+                    >
+                      Usability
+                    </button>
+                    <button
+                      type="button"
+                      @click="
+                        selectedFocusArea =
+                          selectedFocusArea === 'games' ? null : 'games'
+                      "
+                      :class="[
+                        'px-2 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                        selectedFocusArea === 'games'
+                          ? 'bg-[#ECEDFD] text-black'
+                          : 'text-gray-700 hover:bg-gray-50',
+                      ]"
+                    >
+                      Games
+                    </button>
+                    <button
+                      type="button"
+                      @click="
+                        selectedFocusArea =
+                          selectedFocusArea === 'support' ? null : 'support'
+                      "
+                      :class="[
+                        'px-2 py-2 rounded-[14px] text-sm font-medium transition-colors duration-200',
+                        selectedFocusArea === 'support'
+                          ? 'bg-[#ECEDFD] text-black'
+                          : 'text-gray-700 hover:bg-gray-50',
+                      ]"
+                    >
+                      Support
                     </button>
                   </div>
                 </div>
@@ -2107,13 +2212,12 @@ export default {
         { value: "GR", label: "Greek" },
       ],
       selectedTone: "sincere",
-      selectedFocusArea: null,
-      selectedCommentLength: null,
       selectedPlayerType: "casual player",
       selectedExperienceLevel: "intermediate",
       selectedPersonality: "direct",
       selectedWritingStyle: "casual",
       selectedMotivation: "to win big",
+      selectedFocusArea: "offers",
     };
   },
   mounted() {
@@ -2261,6 +2365,10 @@ export default {
           playerType: this.selectedPlayerType || "",
           personality: this.selectedPersonality || "",
           writingStyle: this.selectedWritingStyle || "",
+          experienceLevel: this.selectedExperienceLevel || '',
+          toneOfVoice: this.selectedTone || '', 
+          motivationForPlaying: this.selectedMotivation || '',
+          focusArea: this.selectedFocusArea || '',
         });
 
         const response = await fetch(
