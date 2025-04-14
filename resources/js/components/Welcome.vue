@@ -2182,8 +2182,15 @@
 </template>
 
 <script>
+import { useToast } from 'vue-toastification'
+import "vue-toastification/dist/index.css"
+
 export default {
   name: "Welcome",
+  setup() {
+    const toast = useToast()
+    return { toast }
+  },
   data() {
     return {
       username: "",
@@ -2346,10 +2353,18 @@ export default {
       }
       if (!this.params.brand_name) {
         this.validationErrors.brand_name = "Please enter a brand name";
+        this.toast.error("Please enter a brand name", {
+          timeout: 3000,
+          position: "top-right",
+        });
         hasErrors = true;
       }
       if (!this.params.url) {
         this.validationErrors.url = "Please enter a brand review URL";
+        this.toast.error("Please enter a brand review URL", {
+          timeout: 3000,
+          position: "top-right",
+        });
         hasErrors = true;
       }
       if (!this.params.character_max) {
@@ -2394,7 +2409,7 @@ export default {
         });
 
         const response = await fetch(
-          `${this.apiBaseUrl}/ratings/rating-generator2?${queryParams}`
+          `${this.apiBaseUrl}/ratings/rating-generator?${queryParams}`
         );
 
         if (!response.ok) {
