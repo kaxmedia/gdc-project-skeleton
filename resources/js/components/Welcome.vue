@@ -2224,8 +2224,8 @@ export default {
         model: "openai",
       },
       modelOptions: [
-        // { value: "claude", label: "Claude" },
         { value: "openai", label: "OpenAI" },
+        { value: "claude", label: "Claude" },
       ],
       selectedLanguage: "EN",
       languageOptions: [
