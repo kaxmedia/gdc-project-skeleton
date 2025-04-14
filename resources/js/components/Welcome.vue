@@ -2205,7 +2205,7 @@ export default {
         score: "7",
         character_max: "200",
         statements: "1",
-        model: "claude",
+        model: "openai",
         misspellings: "0",
       },
       validationErrors: {
@@ -2221,10 +2221,10 @@ export default {
         score: "7",
         character_max: "200",
         statements: "1",
-        model: "claude",
+        model: "openai",
       },
       modelOptions: [
-        { value: "claude", label: "Claude" },
+        // { value: "claude", label: "Claude" },
         { value: "openai", label: "OpenAI" },
       ],
       selectedLanguage: "EN",
