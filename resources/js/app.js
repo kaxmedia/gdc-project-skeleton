@@ -1,6 +1,6 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import Welcome from './components/Welcome.vue';
+import AIReviewsGenerator from './components/AIReviewsGenerator.vue';
 
-const app = createApp(Welcome);
+const app = createApp(AIReviewsGenerator);
 app.mount('#app');
