@@ -1061,13 +1061,13 @@ export default {
   data() {
     return {
       params: {
-        selectedTone: "sincere",
-        selectedPlayerType: "casual player",
-        selectedExperienceLevel: "intermediate",
-        selectedPersonality: "direct",
-        selectedWritingStyle: "casual",
-        selectedMotivation: "to win big",
-        selectedFocusArea: "offers",
+        selectedTone: 'sincere',
+        selectedPlayerType: 'casual player',
+        selectedExperienceLevel: 'intermediate',
+        selectedPersonality: 'direct',
+        selectedWritingStyle: 'casual',
+        selectedMotivation: 'to win big',
+        selectedFocusArea: 'offers',
       }
     }
   },
